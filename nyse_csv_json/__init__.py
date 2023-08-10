@@ -5,14 +5,15 @@ import logging
 
 
 def main():
+    src_dir=os.environ['SRC_DIR']
+    log_dir_path=os.environ['LOG_DIR_PATH']
     logging.basicConfig(
-        filename='logging/log_msgs.log',
+        filename=log_dir_path,
         level=logging.INFO,
         format='%(asctime)s %(levelname)s %(message)s',
         datefmt='date --> %Y-%B-%d time --> %I:%M:%S %p'
     )
     logging.info('file format conversion started')
-    src_dir=os.environ['SRC_DIR']
     # tgt_dir=os.environ['TGT_DIR']
     src_file_pattern=os.environ.setdefault('SRC_FILE_PATTERN','NYSE*txt.gz')
     src_file_names=sorted(glob.glob(f'{src_dir}/{src_file_pattern}'))
