@@ -2,9 +2,6 @@ nc-venv
 __pycache__
 dummy
 data
-logging
 build
 dist
 nyse_csv_json.egg-info
-setup.py
-
